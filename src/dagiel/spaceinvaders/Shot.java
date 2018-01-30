@@ -18,7 +18,7 @@ public class Shot extends Sprite {
         ImageIcon ii = new ImageIcon(shotImg);
         setImage(ii.getImage());
         setX(x + H_SPACE);
-        setY(y + H_SPACE);
+        setY(y - V_SPACE);
     }
 
 }

@@ -5,10 +5,10 @@ import java.awt.event.KeyEvent;
 
 public class Player extends Sprite implements Commons {
 
-    private final int START_Y = 280;
-    private final int START_X = 270;
+    private final int START_Y = 430;
+    private final int START_X = 430;
 
-    private final String playerImg = "src/images/starship.png";
+    private final String playerImg = "src/images/alien.png";
     private int width;
 
     public Player() {

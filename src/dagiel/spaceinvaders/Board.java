@@ -47,7 +47,7 @@ public class Board extends JPanel implements Commons, Runnable {
         aliens = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
-                Alien alien = new Alien(ALIEN_INIT_X + 18, ALIEN_INIT_Y + 18 * i);
+                Alien alien = new Alien(ALIEN_INIT_X + 50 * j, ALIEN_INIT_Y + 50 * i);
                 aliens.add(alien);
             }
         }
@@ -77,6 +77,7 @@ public class Board extends JPanel implements Commons, Runnable {
         }
         if (player.isDying()) {
             player.die();
+            ingame = false;
         }
     }
 
@@ -103,7 +104,7 @@ public class Board extends JPanel implements Commons, Runnable {
         g.setColor(Color.green);
 
         if (ingame) {
-            g.drawLine(0, GROUND, BOARD_WIDTH, BOARD_HEIGHT);
+            g.drawLine(0, GROUND, BOARD_WIDTH, GROUND);
             drawAliens(g);
             drawPlayer(g);
             drawShot(g);
@@ -184,7 +185,7 @@ public class Board extends JPanel implements Commons, Runnable {
                 Iterator i2 = aliens.iterator();
                 while(i2.hasNext()) {
                     Alien a3 = (Alien) i2.next();
-                    a.setY(a3.getY() + GO_DOWN);
+                    a3.setY(a3.getY() + GO_DOWN);
                 }
             }
         }
@@ -208,7 +209,7 @@ public class Board extends JPanel implements Commons, Runnable {
             Alien.Bomb b = a.getBomb();
 
             if (shot == CHANCE && a.isVisible() && b.isDestroyed()) {
-                b.setDestroyed(true);
+                b.setDestroyed(false);
                 b.setX(a.getX());
                 b.setY(a.getY());
             }
