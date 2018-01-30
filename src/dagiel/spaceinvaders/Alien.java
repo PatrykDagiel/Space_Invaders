@@ -13,7 +13,7 @@ public class Alien extends Sprite {
 
     private void initAlien(int x, int y) {
         this.x = x;
-        this.y - y;
+        this.y = y;
         bomb = new Bomb(x, y);
         ImageIcon ii = new ImageIcon(alienImg);
         setImage(ii.getImage());

@@ -143,10 +143,10 @@ public class Board extends JPanel implements Commons, Runnable {
                 int alienY = a.getY();
 
                 if (a.isVisible() && shot.isVisible()) {
-                    if (shotX >= alienX
+                    if (shotX >= (alienX)
                         && shotX <= (alienX + ALIEN_WIDTH)
                         && shotY >= (alienY)
-                        && shotY <= (alienY + ALIEN_HEIGHT) {
+                        && shotY <= (alienY + ALIEN_HEIGHT)) {
                         ImageIcon ii = new ImageIcon(explImg);
                         a.setImage(ii.getImage());
                         a.setDying(true);
