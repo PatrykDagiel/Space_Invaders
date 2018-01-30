@@ -18,7 +18,7 @@ public class Board extends JPanel implements Commons, Runnable {
     private int deaths = 0;
 
     private boolean ingame = true;
-    private final String explImg = "src/images/explosion.png";
+    private final String explImg = "./res/images/explosion.png";
     private String message = "Game over!";
 
     private Thread animator;
@@ -48,6 +48,7 @@ public class Board extends JPanel implements Commons, Runnable {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 6; j++) {
                 Alien alien = new Alien(ALIEN_INIT_X + 18, ALIEN_INIT_Y + 18 * i);
+                aliens.add(alien);
             }
         }
         player = new Player();

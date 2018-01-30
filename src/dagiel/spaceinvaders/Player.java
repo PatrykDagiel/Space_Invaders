@@ -8,7 +8,7 @@ public class Player extends Sprite implements Commons {
     private final int START_Y = 280;
     private final int START_X = 270;
 
-    private final String playerImg = "src/imges/player.png";
+    private final String playerImg = "src/images/starship.png";
     private int width;
 
     public Player() {
